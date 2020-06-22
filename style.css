@@ -1,0 +1,73 @@
+*{
+  font-family: 'Balsamiq Sans', cursive;
+  padding: 0;
+  margin: 0;
+}
+body{
+  background-color: #f8f8ff;
+  color: #483d8b;
+}
+
+
+/* Tema da atividade */
+header h1{
+  font-size: 20;
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+/* Exibição dos tempos */
+main .styleTimes{
+  color: #6A5ACD;
+  font-size: 140pt;
+  text-align: center;
+  margin-top: 80px;
+}
+
+/* Entrada dos tempos */
+main .inputs{
+  text-align: center;
+  margin-top: 30px;
+}
+main label{
+  margin: 5px 0px;
+  font-size: 16pt;
+}
+main input{
+  padding: 5px;
+  text-align: center;
+  margin: 5px 20px 5px 0px;
+}
+
+
+/* Start - Stop - Restart - Clear */
+main aside{
+  text-align: center;
+  margin-top: 30px;
+}
+main aside button{
+  background-color: #BEBEBE;
+  color: #ffff;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin: 50px 50px;
+  display: inline-block;
+}
+
+
+/* Rodapé */
+footer{
+  margin: 50px 10px 10px 10px;
+  text-align: center;
+}
+footer p{
+  margin: 10px 0px;
+}
+footer span{
+  margin-bottom: 10px;
+}
+footer span a{
+  text-decoration: none;
+  color: #483d8b;
+}
