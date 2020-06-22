@@ -3,6 +3,8 @@ const hours = document.getElementById('hours');
 const minuts = document.getElementById('minuts');
 const seconds = document.getElementById('seconds');
 
+const inputs = document.getElementById('inputs');
+
 // exit for users
 const hoursTime = document.getElementById('hoursTime');
 const minutsTime = document.getElementById('minutsTime');
@@ -82,6 +84,8 @@ function count(){// count--
       hours.remove();
       minuts.remove();
       seconds.remove();
+
+      inputs.remove();
 
       return count();
     }else // 0 -> 0 -> 0
