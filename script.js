@@ -29,7 +29,17 @@ function count(){// count--
     // Exit for the user
     hoursTime.innerHTML = (hrs < 10 ? '0' + hrs : hrs);
     minutsTime.innerHTML = (min < 10 ? '0' + min : min);
-    secondsTime.innerHTML = (sec < 10 ? '0' + sec : sec);   
+    secondsTime.innerHTML = (sec < 10 ? '0' + sec : sec); 
+
+    if(hrs === 0 && min === 0){
+      hoursTime.style.display = 'none';
+      minutsTime.style.display = 'none';
+    }else if(hrs === 0 && min > 0){
+      hoursTime.style.display = 'none';
+    }else if(hours > 0 && min === 0){
+      minutsTime.style.display = 'none';
+    } 
+    
 
     // Rules
       if(sec > 0){// sec
@@ -55,11 +65,15 @@ function count(){// count--
   
 }
 
- function start(){// start ...
+function start(){// start ...
 
-  h = hours.value;
-  m = minuts.value;
-  s = seconds.value;
+  h = parseInt(hours.value);
+  m = parseInt(minuts.value);
+  s = parseInt(seconds.value);
+  // Check NaN
+  (h === '' ? h = 0 : h);
+  (m === '' ? m = 0 : m);
+  (s === '' ? s = 0 : s);
 
   if(hoursTime.innerHTML > 0 || minutsTime.innerHTML > 0 || secondsTime.innerHTML > 0){
     hrs = parseInt(hoursTime.innerHTML);
@@ -73,7 +87,6 @@ function count(){// count--
     hrs = parseInt(hours.value);
     min = parseInt(minuts.value);
     sec = parseInt(seconds.value);
-
     // Check NaN
     (hrs === '' ? hrs = 0 : hrs);
     (min === '' ? min = 0 : min);
@@ -81,10 +94,6 @@ function count(){// count--
 
     if(hrs > 0 || min > 0 || sec > 0){// start
       // remove inputs
-      hours.remove();
-      minuts.remove();
-      seconds.remove();
-
       inputs.remove();
 
       return count();
@@ -101,9 +110,8 @@ function stop(){// 00:04:35
 
 function restart(){// 00:04:35 -> start -> 00:04:35
 
-  (h === '' ? h = 0 : h);
-  (m === '' ? m = 0 : m);
-  (s === '' ? s = 0 : s);
+  hoursTime.style.display = 'inline';
+  minutsTime.style.display = 'inline';
 
   hoursTime.innerHTML = (h < 10 ? '0' + h : h);
   minutsTime.innerHTML = (m < 10 ? '0' + m : m);

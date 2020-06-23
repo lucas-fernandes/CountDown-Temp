@@ -26,7 +26,7 @@ main .styleTimes{
 }
 
 /* Entrada dos tempos */
-main .inputs{
+main #inputs{
   text-align: center;
   margin-top: 30px;
 }
@@ -58,16 +58,15 @@ main aside button{
 
 /* Rodapé */
 footer{
-  margin: 50px 10px 10px 10px;
+  position: fixed;
+  left: 45%;
+  bottom: 2%;
   text-align: center;
 }
 footer p{
   margin: 10px 0px;
 }
-footer span{
-  margin-bottom: 10px;
-}
-footer span a{
+footer a{
   text-decoration: none;
   color: #483d8b;
 }
