@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <div>
+  <div class="container">
     <header>
       <h1>CountDown</h1>
     </header>
@@ -35,13 +35,12 @@
         <input id="seconds" type="number" min="0" max="59" placeholder="Seconds" value="0">
       </div>
 
-      <aside>
+      <div id="buttons">
         <button id="start" onclick="start()">START</button>
         <button id="stop" onclick="stop()">STOP</button>
         <button id="restart" onclick="restart()">RESTART</button>
         <button id="clear" onclick="location.reload()">CLEAR</button>
-      </aside>
-
+      </div>
     </main>
 
     <footer>
@@ -54,7 +53,6 @@
   </div>
 
   <script src="script.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </body>
 
 </html>

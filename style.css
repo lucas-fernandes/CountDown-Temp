@@ -9,7 +9,7 @@ body{
 }
 
 
-/* Tema da atividade */
+/* Title */
 header h1{
   font-size: 20;
   text-align: center;
@@ -24,6 +24,7 @@ main .styleTimes{
   text-align: center;
   margin-top: 80px;
 }
+
 
 /* Entrada dos tempos */
 main #inputs{
@@ -42,11 +43,11 @@ main input{
 
 
 /* Start - Stop - Restart - Clear */
-main aside{
+#buttons{
   text-align: center;
   margin-top: 30px;
 }
-main aside button{
+div button{
   background-color: #BEBEBE;
   color: #ffff;
   border-radius: 10px;
@@ -56,12 +57,10 @@ main aside button{
 }
 
 
-/* Rodapé */
+/* Rodapé Copy */
 footer{
-  position: fixed;
-  left: 45%;
-  bottom: 2%;
   text-align: center;
+  margin-top: 40px;
 }
 footer p{
   margin: 10px 0px;
