@@ -15,6 +15,18 @@ header h1{
   text-align: center;
   margin-top: 20px;
 }
+header p{
+  position: absolute;
+  right: 50px;
+  top: 20px;
+  padding: 8px;
+  background-color: rgba(139, 118, 118, 0.521);
+  border-radius: 10px;
+}
+header p a{
+  color: white;
+  text-decoration: none;
+}
 
 
 /* Exibição dos tempos */
@@ -24,23 +36,6 @@ main .styleTimes{
   text-align: center;
   margin-top: 80px;
 }
-
-
-/* Entrada dos tempos */
-main #inputs{
-  text-align: center;
-  margin-top: 30px;
-}
-main label{
-  margin: 5px 0px;
-  font-size: 16pt;
-}
-main input{
-  padding: 5px;
-  text-align: center;
-  margin: 5px 20px 5px 0px;
-}
-
 
 /* Start - Stop - Restart - Clear */
 #buttons{

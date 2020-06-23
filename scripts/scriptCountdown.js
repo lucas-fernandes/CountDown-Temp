@@ -36,7 +36,7 @@ function count(){// count--
       minutsTime.style.display = 'none';
     }else if(hrs === 0 && min > 0){
       hoursTime.style.display = 'none';
-    }else if(hours > 0 && min === 0){
+    }else if(hrs > 0 && min === 0){
       minutsTime.style.display = 'none';
     } 
     

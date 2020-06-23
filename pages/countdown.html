@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/styles/styleCountdown.css">
+  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+
+  <title>Temp</title>
+
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>CountDown</h1>
+
+      <p><a href="/index.html">Voltar</a></p>
+    </header>
+
+    <main>
+      <div class="styleTimes">
+        <span id="hoursTime">00</span> 
+        <span id="minutsTime">00</span> 
+        <span id="secondsTime">00</span> 
+      </div>
+
+      <div id="inputs">
+        <label for="hours">Hours:</label>
+        <input id="hours" type="number" min="0" max="23" placeholder="Hours" value="0">
+        <label for="minuts">Minuts:</label>
+        <input id="minuts" type="number" min="0" max="59" placeholder="Minuts" value="0">
+        <label for="seconds">Seconds:</label>
+        <input id="seconds" type="number" min="0" max="59" placeholder="Seconds" value="0">
+      </div>
+
+      <div id="buttons">
+        <button id="start" onclick="start()">START</button>
+        <button id="stop" onclick="stop()">STOP</button>
+        <button id="restart" onclick="restart()">RESTART</button>
+        <button id="clear" onclick="location.reload()">CLEAR</button>
+      </div>
+    </main>
+
+    <footer>
+      <p>© Copyright - Lucas Fernandes</p>
+  
+      <a href="https://www.instagram.com/lucas.faf/" target="_blank">Instagram</a>
+        <strong>|</strong> 
+      <a href="https://www.linkedin.com/in/lucas-fernandes-223a18165/" target="_blank">Linkedin</a>
+    </footer>
+  </div>
+
+  <script src="/scripts/scriptCountdown.js"></script>
+</body>
+
+</html>

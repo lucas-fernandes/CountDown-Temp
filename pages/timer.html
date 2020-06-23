@@ -6,44 +6,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="/styles/styleCountdown.css">
+  <link rel="stylesheet" href="/styles/styleTimer.css">
   <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
 
   <title>Temp</title>
-
-  <style>
-
-    body main{
-      text-align: center;
-    }
-
-    body main h3{
-      margin-top: 100px;
-    }
-    body main a{
-    }
-
-    body div footer{
-      bottom: 2000px;
-    }
-
-  </style>
 
 </head>
 
 <body>
   <div class="container">
     <header>
-      <h1>Temp - your timer </h1>
+      <h1>Timer</h1>
+
+      <p><a href="/index.html">Voltar</a></p>
     </header>
 
     <main>
+      <div class="styleTimes">
+        <span id="hoursTime">00</span> 
+        <span id="minutsTime">00</span> 
+        <span id="secondsTime">00</span> 
+      </div>
 
-      <h3>Escolha o seu tipo ideal de temporização:</h3>
-
-      <a href="/pages/timer.html"><button>TIMER</button></a>
-      <a href="/pages/countdown.html"><button>COUNTDOWN</button></a>
-
+      <div id="buttons">
+        <button id="start" onclick="start()">START</button>
+        <button id="stop" onclick="stop()">STOP</button>
+        <button id="restart" onclick="location.reload()">RESTART</button>
+      </div>
     </main>
 
     <footer>
@@ -54,6 +43,8 @@
       <a href="https://www.linkedin.com/in/lucas-fernandes-223a18165/" target="_blank">Linkedin</a>
     </footer>
   </div>
+
+  <script src="/scripts/scriptTimer.js"></script>
 </body>
 
 </html>
