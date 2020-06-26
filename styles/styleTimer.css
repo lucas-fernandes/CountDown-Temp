@@ -1,66 +1,71 @@
 *{
-  font-family: 'Balsamiq Sans', cursive;
   padding: 0;
   margin: 0;
+  font-family: 'Balsamiq Sans', cursive;
+  color: #6959CD;
+  text-decoration: none;
 }
-body{
-  background-color: #f8f8ff;
-  color: #483d8b;
-}
-
-
-/* Title */
-header h1{
-  font-size: 20;
+body, html{
+  background-color: #F5F5F5;
   text-align: center;
-  margin-top: 20px;
 }
-header p{
-  position: absolute;
-  right: 50px;
-  top: 20px;
-  padding: 8px;
-  background-color: rgba(139, 118, 118, 0.521);
-  border-radius: 10px;
+
+
+
+body header h1{
+  margin-top: 6vh;
 }
-header p a{
+body header p{
+  margin-top: -6vh;
+  text-align: end;
+  margin-right: 1vw;
+}
+
+
+
+body main .styleTimes{
+  margin-top: 17vh;
+}
+body main .styleTimes span{
+  font-size: 15em;
+}
+body main .styleTimes #minutsTime{
+ margin: 0px 30px; 
+}
+
+
+
+body main button{
+  margin-top: 5vh;
+  padding: 13px;
+  border-radius: 20px;
+  border-color: #6959CD;
+  text-decoration: none;
+}
+body main #buttons strong{
+  margin: 0px 30px;
+}
+body main #start:hover{
   color: white;
+  background-color: green;
+}
+body main #stop:hover{
+  color: white;
+  background-color: red;
+}
+body main #restart:hover{
+  color: white;
+  background-color: blue;
+}
+
+
+
+body footer{
+  margin-top: 17vh;
+}
+body footer a{
   text-decoration: none;
 }
-
-
-/* Exibição dos tempos */
-main .styleTimes{
-  color: #6A5ACD;
-  font-size: 140pt;
-  text-align: center;
-  margin-top: 80px;
-}
-
-/* Start - Stop - Restart - Clear */
-#buttons{
-  text-align: center;
-  margin-top: 30px;
-}
-div button{
-  background-color: #BEBEBE;
-  color: #ffff;
-  border-radius: 10px;
-  padding: 15px 20px;
-  margin: 50px 50px;
-  display: inline-block;
-}
-
-
-/* Rodapé Copy */
-footer{
-  text-align: center;
-  margin-top: 40px;
-}
-footer p{
-  margin: 10px 0px;
-}
-footer a{
-  text-decoration: none;
-  color: #483d8b;
+body footer a:hover{
+  color: black;
 }

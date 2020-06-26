@@ -1,0 +1,43 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: 'Balsamiq Sans', cursive;
+  color: #6959CD;
+}
+body, html{
+  background-color: #F5F5F5;
+  text-align: center;
+}
+
+body header h1{
+  margin-top: 6vh;
+}
+
+body main h3{
+  margin-top: 25vh;
+  font-size: 20pt;
+}
+
+body main button{
+  margin-top: 17vh;
+  padding: 13px;
+  border-radius: 20px;
+}
+body main button:hover{
+  color: white;
+  background-color: #6959CD;
+}
+
+body main strong{
+  margin: 0px 30px;
+}
+
+body footer{
+  margin-top: 29vh;
+}
+body footer a{
+  text-decoration: none;
+}
+body footer a:hover{
+  color: black;
+}

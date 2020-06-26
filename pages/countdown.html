@@ -19,6 +19,12 @@
       <h1>CountDown</h1>
 
       <p><a href="/index.html">Voltar</a></p>
+      <p><button class="theme" onclick="mudaCor()">Tema</button></p>
+
+      <p id="image">
+        <label for="backgroundImage">Imagem: </label>
+        <input id="backgroundImage" type="file" name="image" accept="image/png, image/jpeg"  multiple /> 
+      </p>
     </header>
 
     <main>
@@ -31,7 +37,7 @@
       <div id="inputs">
         <label for="hours">Hours:</label>
         <input id="hours" type="number" min="0" max="23" placeholder="Hours" value="0">
-        <label for="minuts">Minuts:</label>
+        <label class="minuts" for="minuts">Minuts:</label>
         <input id="minuts" type="number" min="0" max="59" placeholder="Minuts" value="0">
         <label for="seconds">Seconds:</label>
         <input id="seconds" type="number" min="0" max="59" placeholder="Seconds" value="0">
