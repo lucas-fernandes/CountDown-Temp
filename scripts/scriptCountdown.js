@@ -137,12 +137,28 @@ function mudaCor(){
     minutsTime.style.color = '#fff';
     secondsTime.style.color = '#fff';
   }else{
-    theme.style.backgroundColor = '#f8f8ff';
-    hoursTime.style.color = '#483d8b';
-    minutsTime.style.color = '#483d8b';
-    secondsTime.style.color = '#483d8b';
+    theme.style.backgroundColor = '#f5f5f5';
+    hoursTime.style.color = '#6959CD';
+    minutsTime.style.color = '#6959CD';
+    secondsTime.style.color = '#6959CD';
     change -= 3;
   } 
   change++;
 
 }
+
+
+
+$(function() {
+  $('#image2').change(function() {
+    const file = $(this)[0].files[0];
+    const fileReader = new FileReader();
+
+    fileReader.onloadend = () => {
+      const backgroundImage = $('body').css('backgroundImage', 'url("' + fileReader.result + '")');
+
+      return backgroundImage;
+    }
+    fileReader.readAsDataURL(file);
+  })
+});

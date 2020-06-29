@@ -6,51 +6,51 @@
   text-decoration: none;
 }
 body, html{
+  height: 100%;
+  width: 100%;
+}
+body{
   background-color: #F5F5F5;
   text-align: center;
 }
 
-
-
-body header h1{
-  margin-top: 6vh;
+body header{
+  border: 1px solid transparent;
 }
-body header p{
-  margin-top: -6vh;
+body header h1{
+  margin-top: 5vh;
+}body header p{
+  margin-top: 1vh;
   text-align: end;
   margin-right: 1vw;
+}body header p button{
+  margin-top: -2vh;
+}body header #themeImage{
+  margin-top: 2vh;
 }
-body header p button{
-  margin-top: 7vh;
-}
-body header #image{
-  margin-top: 1vh;
+body header #menu{
+  margin-top: -6vh;
 }
 
-
-
-body main .styleTimes{
+body main{
   margin-top: 5vh;
 }
-body main .styleTimes span{
+
+body main .styleTimes{
+  margin-top: 3vh;
+}body main .styleTimes span{
   font-size: 15em;
-}
-body main .styleTimes #minutsTime{
+}body main .styleTimes #minutsTime{
  margin: 0px 30px; 
 }
 
-
 body main #inputs{
-  margin-top: -3vh;
-}
-body main #inputs #minuts{
+  margin-top: 1vh;
+}body main #inputs #minuts{
   margin: 0px 40px 0px 0px;
-}
-body main #inputs .minuts{
+}body main #inputs .minuts{
   margin: 0px 0px 0px 40px;
 }
-
-
 
 body main button{
   margin-top: 10vh;
@@ -58,41 +58,31 @@ body main button{
   border-radius: 20px;
   border-color: #6959CD;
   text-decoration: none;
-}
-body main #buttons strong{
+}body main #buttons strong{
   margin: 0px 30px;
-}
-body main #buttons #stop{
+}body main #buttons #stop{
   margin: 0px 20px 0px 40px;
-}
-body main #buttons #restart{
+}body main #buttons #restart{
   margin: 0px 40px 0px 20px;
-}
-body main #start:hover{
+}body main #start:hover{
   color: white;
   background-color: green;
-}
-body main #stop:hover{
+}body main #stop:hover{
   color: white;
   background-color: red;
-}
-body main #restart:hover{
+}body main #restart:hover{
   color: white;
   background-color: blue;
-}
-body main #clear:hover{
+}body main #clear:hover{
   color: white;
   background-color: yellow;
 }
 
 
-
 body footer{
-  margin-top: 16.6vh;
-}
-body footer a{
+  margin-top: 12vh;
+}body footer a{
   text-decoration: none;
-}
-body footer a:hover{
+}body footer a:hover{
   color: black;
 }

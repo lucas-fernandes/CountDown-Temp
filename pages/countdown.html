@@ -14,17 +14,18 @@
 </head>
 
 <body>
-  <div class="container">
+  <div id="container">
     <header>
       <h1>CountDown</h1>
 
-      <p><a href="/index.html">Voltar</a></p>
-      <p><button class="theme" onclick="mudaCor()">Tema</button></p>
-
-      <p id="image">
-        <label for="backgroundImage">Imagem: </label>
-        <input id="backgroundImage" type="file" name="image" accept="image/png, image/jpeg"  multiple /> 
-      </p>
+      <div id="menu">
+        <p><a href="/index.html">Voltar</a></p>
+        <p><button class="theme" onclick="mudaCor()">Tema</button></p>
+  
+        <p id="themeImage">
+          <input id="image2" type="file" name="image" accept="image/png, image/jpeg"/>
+        </p>
+      </div>
     </header>
 
     <main>
@@ -60,6 +61,7 @@
     </footer>
   </div>
 
+  <script src="http://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
   <script src="/scripts/scriptCountdown.js"></script>
 </body>
 
