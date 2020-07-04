@@ -12,77 +12,135 @@ body, html{
 body{
   background-color: #F5F5F5;
   text-align: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
-body header{
-  border: 1px solid transparent;
-}
-body header h1{
-  margin-top: 5vh;
-}body header p{
-  margin-top: 1vh;
-  text-align: end;
-  margin-right: 1vw;
-}body header p button{
-  margin-top: -2vh;
-}body header #themeImage{
-  margin-top: 2vh;
-}
-body header #menu{
-  margin-top: -6vh;
-}
 
-body main{
+
+.container header h1{
   margin-top: 5vh;
 }
 
-body main .styleTimes{
+
+.container header #check{
+  display: none;
+}
+.container header #check:checked ~ .barra{
+  transform: translateX(-300px);
+}
+.container header #check:checked ~ .barra nav a .link{
+  opacity: 1;
+  margin-top: 0;
+  transition-delay: .2s;
+}
+/*
+.container header #check:checked ~ .barra nav p #image{
+  opacity: 1;
+  margin-top: 0;
+  transition-delay: .2s;
+}
+*/
+.container header #icon{
+  cursor: pointer;
+  padding: 15px;
+  position: absolute;
+  top: 25px;
+  right: 10px;
+  z-index: 1;
+}
+
+
+.container header .barra{
+  position: absolute;
+  height: 50%;
+  width: 300px;
+  right: -300px;
+  background-color: #f5f5f5;
+  transition: all .2s linear;
+}
+
+.container header div nav{
+  background-color: #fffafa;
+  width: 100%;
+  position: absolute;
+  margin-top: 60px;
+}
+.container header div nav a{
+  text-decoration: none;
+  display: block;
+  margin-top: 1px;
+}
+
+.container header div nav .link{
+  background-color: #fffafa;
+  color: #9370db;
+  cursor: pointer;
+  padding: 20px;
+  transition: all .2s linear;
+  border-bottom: 2px solid #9370db;
+  opacity: 1;
+}
+.container header div nav .link:hover{
+  background-color: #9370db;
+  color: #fffafa;
+  border-bottom: 2px solid #fffafa;
+  transition: 1s;
+}
+
+
+
+.container main{
+  margin-top: 5vh;
+}
+
+.container main .styleTimes{
   margin-top: 3vh;
-}body main .styleTimes span{
+}.container main .styleTimes span{
   font-size: 15em;
-}body main .styleTimes #minutsTime{
+}.container main .styleTimes #minutsTime{
  margin: 0px 30px; 
 }
 
-body main #inputs{
+.container main #inputs{
   margin-top: 1vh;
-}body main #inputs #minuts{
+}.container main #inputs #minuts{
   margin: 0px 40px 0px 0px;
-}body main #inputs .minuts{
+}.container main #inputs .minuts{
   margin: 0px 0px 0px 40px;
 }
 
-body main button{
+.container main button{
   margin-top: 10vh;
   padding: 13px;
   border-radius: 20px;
   border-color: #6959CD;
   text-decoration: none;
-}body main #buttons strong{
+}.container main #buttons strong{
   margin: 0px 30px;
-}body main #buttons #stop{
+}.container main #buttons #stop{
   margin: 0px 20px 0px 40px;
-}body main #buttons #restart{
+}.container main #buttons #restart{
   margin: 0px 40px 0px 20px;
-}body main #start:hover{
+}.container main #start:hover{
   color: white;
   background-color: green;
-}body main #stop:hover{
+}.container main #stop:hover{
   color: white;
   background-color: red;
-}body main #restart:hover{
+}.container main #restart:hover{
   color: white;
   background-color: blue;
-}body main #clear:hover{
+}.container main #clear:hover{
   color: white;
   background-color: yellow;
 }
 
 
-body footer{
-  margin-top: 12vh;
-}body footer a{
+.container footer #copy{
+  margin-top: 18vh;
+}.container footer a{
   text-decoration: none;
-}body footer a:hover{
+}.container footer a:hover{
   color: black;
 }

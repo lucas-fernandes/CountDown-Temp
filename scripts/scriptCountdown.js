@@ -7,6 +7,9 @@ const inputs = document.getElementById('inputs');
 const back = document.getElementById('back');
 const theme = document.body;
 
+const copy = document.getElementById('copy');
+const buttons = document.getElementById('buttons');
+
 // exit for users
 const hoursTime = document.getElementById('hoursTime');
 const minutsTime = document.getElementById('minutsTime');
@@ -70,6 +73,9 @@ function count(){// count--
 
 function start(){// start ...
 
+  copy.style.marginTop = '22vh';
+  buttons.style.visibility = 'colapse';
+
   h = parseInt(hours.value);
   m = parseInt(minuts.value);
   s = parseInt(seconds.value);
@@ -98,7 +104,6 @@ function start(){// start ...
     if(hrs > 0 || min > 0 || sec > 0){// start
       // remove inputs
       inputs.remove();
-      back.remove();
 
       return count();
     }else // 0 -> 0 -> 0
@@ -150,7 +155,7 @@ function mudaCor(){
 
 
 $(function() {
-  $('#image2').change(function() {
+  $('#image').change(function() {
     const file = $(this)[0].files[0];
     const fileReader = new FileReader();
 
