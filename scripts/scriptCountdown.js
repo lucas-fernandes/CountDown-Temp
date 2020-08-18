@@ -3,12 +3,19 @@ const hours = document.getElementById('hours');
 const minuts = document.getElementById('minuts');
 const seconds = document.getElementById('seconds');
 
-const inputs = document.getElementById('inputs');
-const back = document.getElementById('back');
+// modified the elements html
 const theme = document.body;
 
-const copy = document.getElementById('copy');
+const back = document.getElementById('back');
+const spans = document.getElementById('styleTimes');
+
+const inputs = document.getElementById('inputs');
 const buttons = document.getElementById('buttons');
+
+const copy = document.getElementById('copy');
+const copyGit = document.getElementById('cg');
+const copyLink = document.getElementById('cl');
+
 
 // exit for users
 const hoursTime = document.getElementById('hoursTime');
@@ -27,24 +34,28 @@ var h = 0;
 var m = 0;
 var s = 0;
 
-
 function count(){// count--
 
   cont = setInterval(() => {
 
-    // Exit for the user
+    // Format exit for the user
     hoursTime.innerHTML = (hrs < 10 ? '0' + hrs : hrs);
     minutsTime.innerHTML = (min < 10 ? '0' + min : min);
     secondsTime.innerHTML = (sec < 10 ? '0' + sec : sec); 
-
-    if(hrs === 0 && min === 0){
+  
+    if(hrs === 0 && min === 0){// sec
       hoursTime.style.display = 'none';
       minutsTime.style.display = 'none';
-    }else if(hrs === 0 && min > 0){
+    }else if(hrs === 0 && min > 0){// sec -> min
       hoursTime.style.display = 'none';
-    }else if(hrs > 0 && min === 0){
+      minutsTime.style.display = 'inline';
+    }else if(hrs > 0 && min === 0){// sec -> hrs 
       minutsTime.style.display = 'none';
-    } 
+      hoursTime.style.display = 'inline';
+    }else{
+      hoursTime.style.display = 'inline';
+      minutsTime.style.display = 'inline';
+    }
     
 
     // Rules
@@ -73,8 +84,28 @@ function count(){// count--
 
 function start(){// start ...
 
-  copy.style.marginTop = '22vh';
-  buttons.style.visibility = 'colapse';
+
+/**
+ *   
+ * buttons.addEventListener("onmouseover", () => { 
+    buttons.style.display = 'block';
+   }, false);
+
+   buttons.addEventListener("onmouseout", () => {
+    buttons.style.display = 'none';
+  }, false); 
+
+  buttons.onmouseover = () => {
+  buttons.style.display = 'none';
+  }
+  buttons.onmouseout = () => {
+    buttons.style.display = 'block';
+  }
+ * 
+ * */ 
+
+
+
 
   h = parseInt(hours.value);
   m = parseInt(minuts.value);
@@ -92,6 +123,12 @@ function start(){// start ...
 
     return count();
   }else{
+    // styles
+    spans.style.marginTop = '20vh';
+    buttons.style.marginTop = '18vh';
+    //buttons.style.display = 'none';
+    copy.style.display = 'none';
+
 
     hrs = parseInt(hours.value);
     min = parseInt(minuts.value);
@@ -122,39 +159,52 @@ function restart(){// 00:04:35 -> start -> 00:04:35
   hoursTime.style.display = 'inline';
   minutsTime.style.display = 'inline';
 
-  hoursTime.innerHTML = (h < 10 ? '0' + h : h);
-  minutsTime.innerHTML = (m < 10 ? '0' + m : m);
-  secondsTime.innerHTML = (s < 10 ? '0' + s : s);
+  (h <= 0 
+    ? h = 0
+
+    : hoursTime.innerHTML = (h < 10 ? '0' + h : h)
+  );
+
+  (m <= 0 
+    ? m = 0
+
+    : minutsTime.innerHTML = (m < 10 ? '0' + m : m)
+  );
+
+  (s <= 0 
+    ? s = 0
+
+    : secondsTime.innerHTML = (s < 10 ? '0' + s : s)
+  );
 
   return stop();
 }
 
-function mudaCor(){
+function mudaCor(){// themer styles
 
   if(change === 0){
     theme.style.backgroundColor = '#fff';
-    hoursTime.style.color = '#000';
-    minutsTime.style.color = '#000';
-    secondsTime.style.color = '#000';
+    theme.style.color = '#000';
+    copyGit.style.color = '#000';
+    copyLink.style.color = '#000';
   }else if(change === 1){
-    theme.style.backgroundColor = '#000'
-    hoursTime.style.color = '#fff';
-    minutsTime.style.color = '#fff';
-    secondsTime.style.color = '#fff';
+    theme.style.backgroundColor = '#000';
+    theme.style.color = '#fff';
+    copyGit.style.color = '#fff';
+    copyGit.style.ho
+    copyLink.style.color = '#fff';
   }else{
     theme.style.backgroundColor = '#f5f5f5';
-    hoursTime.style.color = '#6959CD';
-    minutsTime.style.color = '#6959CD';
-    secondsTime.style.color = '#6959CD';
+    theme.style.color = '#6959cd';
+    copyGit.style.color = '#6959cd';
+    copyLink.style.color = '#6959cd';
     change -= 3;
   } 
   change++;
 
 }
 
-
-
-$(function() {
+$(function() {//background image
   $('#image').change(function() {
     const file = $(this)[0].files[0];
     const fileReader = new FileReader();

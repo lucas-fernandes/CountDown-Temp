@@ -3,8 +3,13 @@ const hours = document.getElementById('hoursTime');
 const minuts = document.getElementById('minutsTime');
 const seconds = document.getElementById('secondsTime');
 
+// modified the elements html
+const back = document.getElementById('back');
+const theme = document.body;
+
 // Aux's
 var cont;
+var change = 0;
 
 // Times reduces
 var hrs = 0;
@@ -32,19 +37,19 @@ function count(){
     } 
 
     sec+= 1;
-    if(sec === 60){
-      sec = 0;
-      min+= 1;
-      if(min === 60){
-        min = 0;
-        hrs+= 1;
-        if(hrs === 24){
-          hrs = 0;
-          alert('End time!');
-          location.reload();
-        }
+      if(sec === 60){
+        sec = 0;
+        min+= 1;
+          if(min === 60){
+            min = 0;
+            hrs+= 1;
+              if(hrs === 24){
+                hrs = 0;
+                alert('End time!');
+                location.reload();
+              }
+          }
       }
-    }
 
   }, 1000);
 
@@ -66,3 +71,41 @@ function start(){
 function stop(){
   clearInterval(cont);
 }
+
+function mudaCor(){// themer styles
+
+  if(change === 0){
+    theme.style.backgroundColor = '#fff';
+    theme.style.color = '#000';
+    copyGit.style.color = '#000';
+    copyLink.style.color = '#000';
+  }else if(change === 1){
+    theme.style.backgroundColor = '#000';
+    theme.style.color = '#fff';
+    copyGit.style.color = '#fff';
+    copyGit.style.ho
+    copyLink.style.color = '#fff';
+  }else{
+    theme.style.backgroundColor = '#f5f5f5';
+    theme.style.color = '#6959cd';
+    copyGit.style.color = '#6959cd';
+    copyLink.style.color = '#6959cd';
+    change -= 3;
+  } 
+  change++;
+
+}
+
+$(function() {//background image
+  $('#image').change(function() {
+    const file = $(this)[0].files[0];
+    const fileReader = new FileReader();
+
+    fileReader.onloadend = () => {
+      const backgroundImage = $('body').css('backgroundImage', 'url("' + fileReader.result + '")');
+
+      return backgroundImage;
+    }
+    fileReader.readAsDataURL(file);
+  })
+});

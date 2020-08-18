@@ -18,7 +18,22 @@
     <header>
       <h1>Timer</h1>
 
-      <p><a href="/index.html">Voltar</a></p>
+      <input id="check" type="checkbox">
+      <label id="icon" for="check">
+        <img src="/img/menu.png">
+      </label>
+
+        <div class="barra">
+          <nav>
+            <a class="link" href="/index.html">Voltar</a>
+            <a class="link" onclick="mudaCor()">Tema</a>
+            <a class="link">
+              <p id="themeImage">
+                <input id="image" type="file" name="image" accept="image/png, image/jpeg"/>
+              </p>
+            </a>
+          </nav>
+        </div>
     </header>
 
     <main>
@@ -38,13 +53,16 @@
     </main>
 
     <footer>
-      <p>© Copyright - Lucas Fernandes</p>
+      <div id="copy">
+        <p>© Copyright - Lucas Fernandes</p>
   
-      <a href="https://github.com/lucas-fernandes" target="_blank">GitHub</a>
-        <strong>|</strong> 
-      <a href="https://www.linkedin.com/in/lucas-fernandes-223a18165/" target="_blank">Linkedin</a>
+        <a id="cg" href="https://github.com/lucas-fernandes" target="_blank">GitHub</a>
+          <strong>|</strong> 
+        <a id="cl" href="https://www.linkedin.com/in/lucas-fernandes-223a18165/" target="_blank">Linkedin</a>
+      </div>
     </footer>
   </div>
+
   <script src="http://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
   <script src="/scripts/scriptTimer.js"></script>
 </body>

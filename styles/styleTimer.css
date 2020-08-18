@@ -2,70 +2,142 @@
   padding: 0;
   margin: 0;
   font-family: 'Balsamiq Sans', cursive;
-  color: #6959CD;
   text-decoration: none;
 }
 body, html{
+  height: 100%;
+  width: 100%;
+}
+body{
+  color: #6959CD;
   background-color: #F5F5F5;
   text-align: center;
+  overflow-x: hidden;
+}
+.hover {
+  @extend :hover;
 }
 
 
 
-body header h1{
-  margin-top: 6vh;
+.container header h1{
+  margin-top: 5vh;
 }
-body header p{
-  margin-top: -6vh;
-  text-align: end;
-  margin-right: 1vw;
+
+
+.container header #check{
+  display: none;
+}.container header #check:checked ~ .barra{
+  transform: translateX(-300px);
+}.container header #check:checked ~ #icon{
+  transform: translateX(-240px);
+  transition: .2s;
+}
+.container header #check:checked ~ .barra nav a .link{
+  opacity: 1;
+  margin-top: 0;
+  transition-delay: .2s;
+}
+
+.container header #icon{
+  cursor: pointer;
+  padding: 15px;
+  position: absolute;
+  top: 25px;
+  right: 10px;
+  z-index: 1;
+}
+
+.container header .barra{
+  position: absolute;
+  height: 50%;
+  width: 300px;
+  right: -300px;
+  background-color: #fffafa;
+  transition: all .2s linear;
+  border-radius: 10px;
+}
+
+.container header div nav{
+  background-color: #fffafa;
+  width: 100%;
+  position: absolute;
+  margin-top: 0px;
+}
+.container header div nav a{
+  text-decoration: none;
+  display: block;
+  margin-top: 1px;
+}
+
+.container header div nav .link{
+  background-color: #fffafa;
+  color: #9370db;
+  cursor: pointer;
+  padding: 20px;
+  transition: all .2s linear;
+  border-bottom: 2px solid #9370db;
+  opacity: 1;
+}.container header div nav .link:hover{
+  background-color: #9370db;
+  color: #fffafa;
+  border-bottom: 2px solid #fffafa;
+  transition: 1s;
 }
 
 
 
-body main .styleTimes{
-  margin-top: 17vh;
+.container main{
+  margin-top: 5vh;
 }
-body main .styleTimes span{
+
+.container main .styleTimes{
+  margin-top: 3vh;
+}.container main .styleTimes span{
   font-size: 15em;
-}
-body main .styleTimes #minutsTime{
+}.container main .styleTimes #minutsTime{
  margin: 0px 30px; 
 }
 
+.container main #inputs{
+  margin-top: 1vh;
+}.container main #inputs #minuts{
+  margin: 0px 40px 0px 0px;
+}.container main #inputs .minuts{
+  margin: 0px 0px 0px 40px;
+}
 
-
-body main button{
-  margin-top: 5vh;
+.container main button{
+  margin-top: 10vh;
   padding: 13px;
   border-radius: 20px;
   border-color: #6959CD;
   text-decoration: none;
-}
-body main #buttons strong{
+}.container main #buttons strong{
   margin: 0px 30px;
-}
-body main #start:hover{
+}.container main #buttons #stop{
+  margin: 0px 20px 0px 40px;
+}.container main #buttons #restart{
+  margin: 0px 40px 0px 20px;
+}.container main #start:hover{
   color: white;
   background-color: green;
-}
-body main #stop:hover{
+}.container main #stop:hover{
   color: white;
   background-color: red;
-}
-body main #restart:hover{
+}.container main #restart:hover{
   color: white;
   background-color: blue;
+}.container main #clear:hover{
+  color: white;
+  background-color: yellow;
 }
 
 
-
-body footer{
-  margin-top: 17vh;
-}
-body footer a{
+.container footer #copy{
+  margin-top: 22vh;
+}.container footer a{
   text-decoration: none;
-}
-body footer a:hover{
+}.container footer a:hover{
   color: black;
 }
