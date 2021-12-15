@@ -1,4 +1,5 @@
 // inputs users
+const days = document.getElementById('days');
 const hours = document.getElementById('hours');
 const minuts = document.getElementById('minuts');
 const seconds = document.getElementById('seconds');
@@ -18,11 +19,13 @@ const copyLink = document.getElementById('cl');
 
 
 // exit for users
+const daysTime = document.getElementById('daysTime');
 const hoursTime = document.getElementById('hoursTime');
 const minutsTime = document.getElementById('minutsTime');
 const secondsTime = document.getElementById('secondsTime');
 
 // times reduceds
+var day = 0;
 var hrs = 0;
 var min = 0;
 var sec = 0;
@@ -30,6 +33,7 @@ var sec = 0;
 // aux's
 var change = 0;
 var cont = 0;
+var d = 0;
 var h = 0;
 var m = 0;
 var s = 0;
@@ -39,20 +43,30 @@ function count(){// count--
   cont = setInterval(() => {
 
     // Format exit for the user
-    hoursTime.innerHTML = (hrs < 10 ? '0' + hrs : hrs);
-    minutsTime.innerHTML = (min < 10 ? '0' + min : min);
-    secondsTime.innerHTML = (sec < 10 ? '0' + sec : sec); 
+    daysTime.innerHTML = (day < 10 ? '0' + day + 'd' : day + 'd' );
+    hoursTime.innerHTML = (hrs < 10 ? '0' + hrs + 'h' : hrs + 'h' );
+    minutsTime.innerHTML = (min < 10 ? '0' + min + 'm' : min + 'm' );
+    secondsTime.innerHTML = (sec < 10 ? '0' + sec + 's' : sec + 's' ); 
   
-    if(hrs === 0 && min === 0){// sec
+
+    if(day === 0 && hrs === 0 && min === 0){// sec
+      daysTime.style.display = 'none';
       hoursTime.style.display = 'none';
       minutsTime.style.display = 'none';
-    }else if(hrs === 0 && min > 0){// sec -> min
+    }else if(day === 0 && hrs === 0 && min > 0){// sec -> min
+      daysTime.style.display = 'none';
       hoursTime.style.display = 'none';
       minutsTime.style.display = 'inline';
-    }else if(hrs > 0 && min === 0){// sec -> hrs 
-      minutsTime.style.display = 'none';
+    }else if(day === 0 && hrs > 0 && min === 0){// sec -> hrs 
+      daysTime.style.display = 'none';
       hoursTime.style.display = 'inline';
+      minutsTime.style.display = 'none';
+    }else if(day > 0 && hrs === 0 && min === 0){// sec -> day 
+      daysTime.style.display = 'inline';
+      minutsTime.style.display = 'none';
+      hoursTime.style.display = 'none';
     }else{
+      daysTime.style.display = 'inline';
       hoursTime.style.display = 'inline';
       minutsTime.style.display = 'inline';
     }
@@ -61,14 +75,23 @@ function count(){// count--
     // Rules
       if(sec > 0){// sec
         sec -= 1;
+
       }else if(sec === 0 && min > 0){// min
         sec = 59;
         min -= 1;
+
       }else if(sec === 0 && min === 0 && hrs > 0){// hrs
         sec = 59;
         min = 59;
         hrs -= 1;
-      }else if(sec === 0 && min === 0 && hrs === 0){
+
+      }else if(sec === 0 && min === 0 && hrs === 0 && day > 0 ){// days
+        sec = 59;
+        min = 59;
+        hrs = 23;
+        day -=1;
+
+      }else if(day === 0 && sec === 0 && min === 0 && hrs === 0){
         restart();
       
         var alert = setTimeout(async () => {
@@ -106,16 +129,18 @@ function start(){// start ...
 
 
 
-
+  d = parseInt(days.value);
   h = parseInt(hours.value);
   m = parseInt(minuts.value);
   s = parseInt(seconds.value);
   // Check NaN
+  (d === '' ? d = 0 : d);
   (h === '' ? h = 0 : h);
   (m === '' ? m = 0 : m);
   (s === '' ? s = 0 : s);
 
-  if(hoursTime.innerHTML > 0 || minutsTime.innerHTML > 0 || secondsTime.innerHTML > 0){
+  if(daysTime.innerHTML > 0 || hoursTime.innerHTML > 0 || minutsTime.innerHTML > 0 || secondsTime.innerHTML > 0){
+    day = parseInt(daysTime.innerHTML);
     hrs = parseInt(hoursTime.innerHTML);
     min = parseInt(minutsTime.innerHTML);
     sec = parseInt(secondsTime.innerHTML);
@@ -129,16 +154,17 @@ function start(){// start ...
     //buttons.style.display = 'none';
     copy.style.display = 'none';
 
-
+    day = parseInt(days.value); 
     hrs = parseInt(hours.value);
     min = parseInt(minuts.value);
     sec = parseInt(seconds.value);
     // Check NaN
+    (day === '' ? day = 0 : day);
     (hrs === '' ? hrs = 0 : hrs);
     (min === '' ? min = 0 : min);
     (sec === '' ? sec = 0 : sec);
 
-    if(hrs > 0 || min > 0 || sec > 0){// start
+    if(day > 0 || hrs > 0 || min > 0 || sec > 0){// start
       // remove inputs
       inputs.remove();
 
@@ -156,8 +182,15 @@ function stop(){// 00:04:35
 
 function restart(){// 00:04:35 -> start -> 00:04:35
 
+  daysTime.style.display = 'inline';
   hoursTime.style.display = 'inline';
   minutsTime.style.display = 'inline';
+
+  (d <= 0 
+    ? d = 0
+
+    : daysTime.innerHTML = (d < 10 ? '0' + d : d)
+  );
 
   (h <= 0 
     ? h = 0

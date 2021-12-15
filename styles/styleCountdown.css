@@ -96,13 +96,19 @@ body{
   font-size: 15em;
 }.container main #styleTimes #minutsTime{
  margin: 0px 30px; 
+}.container main #styleTimes #daysTime{
+ margin: 0px 30px; 
 }
 
 .container main #inputs{
   margin-top: 1vh;
 }.container main #inputs #minuts{
   margin: 0px 40px 0px 0px;
-}.container main #inputs .minuts{
+}.container main #inputs .margin{
+  margin: 0px 0px 0px 40px;
+}.container main #inputs #days{
+  margin: 0px 40px 0px 0px;
+}.container main #inputs .margin{
   margin: 0px 0px 0px 40px;
 }
 

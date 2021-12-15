@@ -38,16 +38,22 @@
 
     <main>
       <div id="styleTimes">
-        <span id="hoursTime">00</span> 
-        <span id="minutsTime">00</span> 
-        <span id="secondsTime">00</span> 
+        <span id="daysTime">00d</span> 
+        <span id="hoursTime">00h</span> 
+        <span id="minutsTime">00m</span> 
+        <span id="secondsTime">00s</span> 
       </div>
 
       <div id="inputs">
+        <label class="margin" for="days">Days:</label>
+        <input id="days" type="number" min="0" max="30" placeholder="Days" value="0">
+
         <label for="hours">Hours:</label>
         <input id="hours" type="number" min="0" max="23" placeholder="Hours" value="0">
-        <label class="minuts" for="minuts">Minuts:</label>
+
+        <label class="margin" for="minuts">Minuts:</label>
         <input id="minuts" type="number" min="0" max="59" placeholder="Minuts" value="0">
+
         <label for="seconds">Seconds:</label>
         <input id="seconds" type="number" min="0" max="59" placeholder="Seconds" value="0">
       </div>
